@@ -74,17 +74,18 @@ Use **Docker** _EASY_ then before!
 ```js
 `Docker Command List`
 ```
-**1.** pull       `[IMAGENAME]`  
-**2.** del        `[IMAGENAME]`  
-**3.** run       `[IMAGENAME]` ( _OPTION_ `[OUTPORT-INPORT]` `[OUTVOLUME-INVOLUME]` )  
-**4.** stop     `[CONTAINERID]`  
-**5.** start     `[CONTAINERID]  `  
-**6.** restart `[CONTAINERID]`  
-**7.** rm        `[CONTAINERID]  `  
-**8.** prune  
-**9.** ps  
-**10.** list  
-**11.** script `or` sc  
+**1.** pull `[IMAGENAME] `     
+**2.** destroy `[IMAGENAME] `    
+**3.** del `[IMAGENAME]`   
+**4.** run `[IMAGENAME]`  
+**5.** stop `[CONTAINERID]`  
+**6.** start `[CONTAINERID]`  
+**7.** restart `[CONTAINERID]`  
+**8.** rm `[CONTAINERID]`  
+**9.** prune  
+**10.** ps  
+**11.** list  
+**12.** script `or` sc   
 
 > ALSO CAN => `script set a:'''[code]'''`, `script list`, `scripts`, `script [NUMBER]`, `script rm [NUMBER]`, `script show [NUMBER]`
 

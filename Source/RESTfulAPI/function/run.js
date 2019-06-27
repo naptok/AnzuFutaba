@@ -25,7 +25,6 @@ module.exports = (body, moduleControl) => {
     directory = "";
     else
     directory = `--privileged=true -v ${(body.directory).replace("-", ":")}`
-    console.log(name_string + "/")
     exec(`docker run -it -d ${port_string} ${name_string} ${directory} ${body.image}`, (err, stdout, stderr) => {
         if (err)
             moduleControl.reject({ message: err.message, stack: err.stack });

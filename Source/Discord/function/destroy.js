@@ -4,8 +4,8 @@ module.exports = (message, array, client, embed, port, back) => {
         uri: `http://localhost:${port}`,
         method: 'POST',
         body: {
-            func: 'ps',
-            name: array[1]
+            func: 'destroy',
+            image: array[1]
         },
         json: true
     }

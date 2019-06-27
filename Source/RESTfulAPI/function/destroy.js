@@ -3,13 +3,7 @@ module.exports = (body, moduleControl) => {
     const exec = require('child_process').exec;
     moduleControl.json_temp.string = "";
 
-    var _name;
-    if (body.name == undefined)
-        _name = "";
-    else
-        _name = `-q -f name=${body.name}`
-
-    exec(`docker ps -a ${_name}`, (err, stdout, stderr) => {
+    exec(`docker rmi -f ${body.image}`, (err, stdout, stderr) => {
         if (err)
             moduleControl.reject({ message: err.message, stack: err.stack });
         else {

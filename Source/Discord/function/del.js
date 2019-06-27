@@ -1,29 +1,39 @@
 module.exports = (message, array, client, embed, port, back) => {
+    // Development Tweet
+    // 1. 가로로 7개
+    // 2. `1` 인덱스가 이미지를 가리킴
+
     const request = require('request');
-    const options = {
+    var options = {
         uri: `http://localhost:${port}`,
         method: 'POST',
         body: {
-            func: 'delete',
-            image: array[1]
+            func: 'ps',
+            name: array[1]
         },
         json: true
     }
+    
     request.post(options, (err, res, body) => {
-        let send_string = body.string;
         if (body.success) {
-            send_string = `${message.author} **200 OK**\n\`\`\`\n${send_string}\n\`\`\``
+            message.channel.send(`${message.author} **200 OK**`);
+            delete_containers(body.string, back);
+            //send_string = `${message.author} **200 OK**\n\`\`\`\n${send_string}\n\`\`\``
         }else{
-            send_string = `${message.author} **500 ERROR**\n\`\`\`\n${body.reason.message}\n\`\`\``
+            message.channel.send(`${message.author} **500 ERROR**\n\`\`\`\n${body.reason.message}\n\`\`\``);
+            back();
         }
+    });
 
-        if (send_string.length > 2000) {
-            for (let i = 0; i < send_string.length; i += 2000) {
-                message.channel.send(send_string.substr(i, 2000));
+    function delete_containers(data, back){
+        // delete containers
+        var lists = data.split("\n");
+        for(var index in lists) {
+            var _array = ["ps", lists[index]];
+            if (!(lists[index] == "")) {
+                (require(`./rm.js`))(message, _array, client, embed, port, ()=>{});
             }
-        } else if (send_string.length > 0){
-            message.channel.send(send_string);
         }
         back();
-    });
+    }
 }

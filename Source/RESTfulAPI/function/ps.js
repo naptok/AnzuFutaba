@@ -7,7 +7,7 @@ module.exports = (body, moduleControl) => {
     if (body.name == undefined)
         _name = "";
     else
-        _name = `--format "{{.Image}}:{{.ID}}`
+        _name = `--format "{{.Image}}:{{.ID}}"`
 
     exec(`docker ps -a ${_name}`, (err, stdout, stderr) => {
         if (err)

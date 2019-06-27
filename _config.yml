@@ -1,1 +1,6 @@
 theme: jekyll-theme-minimal
+
+title                    : "ANZU FUTABA"
+title_separator          : "-"
+name                     : "Liberty"
+description              : "An amazing website."

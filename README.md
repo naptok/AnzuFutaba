@@ -59,7 +59,7 @@ Use **Docker** _EASY_ then before!
 **4.** stop     `[CONTAINERID]`  
 **5.** start     `[CONTAINERID]  `  
 **6.** restart `[CONTAINERID]`  
-**7.** rm        `[CONTAINERID]  `
+**7.** rm        `[CONTAINERID]  `  
 **8.** prune  
 **9.** ps  
 **10.** list  

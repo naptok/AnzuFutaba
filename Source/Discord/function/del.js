@@ -29,7 +29,7 @@ module.exports = (message, array, client, embed, port, back) => {
         var lists = data.split("\n");
         for(var index in lists) {
             if (!(lists[index] == "")) {
-                if(lists[index].indexOf(array[1])){
+                if(lists[index].indexOf(array[1]) > -1){
                     var _array = ["ps", lists[index].split(":")[1]];
                     (require(`./rm.js`))(message, _array, client, embed, port, ()=>{});
                 }

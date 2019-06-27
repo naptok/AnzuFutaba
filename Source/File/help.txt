@@ -24,11 +24,9 @@
 ```js
 `Additional Command List`
 ```
-**1.** link
-`> 현재 서버의 주소를 가져옵니다`
 
-**2.** about
+**1.** about
 `> Anzu Futaba (서비스)에 대한 정보를 알려줍니다`
 
-**3.** clear
+**2.** clear
 `99개의 메세지를 한번에 없앱니다`

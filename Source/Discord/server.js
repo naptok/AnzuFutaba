@@ -32,7 +32,7 @@ module.exports = (token, port, startletter) => {
                 delete require.cache[require.resolve(`./function/${array[0].split(startletter)[1]}.js`)];
                 (require(`./function/${array[0].split(startletter)[1]}.js`))(message, array, client, embed, port, ()=>{});
             } catch(e) {
-                console.log(e)
+                //console.log(e)
             }
         }
     });

@@ -53,17 +53,17 @@ Use **Docker** _EASY_ then before!
 ```js
 `Docker Command List`
 ```
-**1.** pull       `[IMAGENAME]`
-**2.** del        `[IMAGENAME]`
-**3.** run       `[IMAGENAME]`
-**4.** stop     `[CONTAINERID]`
-**5.** start     `[CONTAINERID]`
-**6.** restart `[CONTAINERID]`
-**7.** rm        `[CONTAINERID]`
-**8.** prune
-**9.** ps
-**10.** list
-**11.** script `or` sc
+**1.** pull       `[IMAGENAME]`  
+**2.** del        `[IMAGENAME]`  
+**3.** run       `[IMAGENAME]  `
+**4.** stop     `[CONTAINERID]`  
+**5.** start     `[CONTAINERID]  `
+**6.** restart `[CONTAINERID]`  
+**7.** rm        `[CONTAINERID]  `
+**8.** prune  
+**9.** ps  
+**10.** list  
+**11.** script `or` sc  
 
 > ALSO CAN => `script set a:'''[code]'''`, `script list`, `scripts`, `script [NUMBER]`, `script rm [NUMBER]`, `script show [NUMBER]`
 
@@ -72,10 +72,10 @@ Use **Docker** _EASY_ then before!
 `Additional Command List`
 ```
 
-**1.** about
+**1.** about  
 `> interduce about Anzu Futaba`
 
-**2.** clear
+**2.** clear  
 `delete 99 messages`
 
 

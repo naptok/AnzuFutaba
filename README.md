@@ -6,7 +6,7 @@
 
 > this is sample image that is use **Anzu Futaba**   
 
-<div style="padding:100px;"> 
+<div style="margin:100px;"> 
 </div>
 
 <div align="center">

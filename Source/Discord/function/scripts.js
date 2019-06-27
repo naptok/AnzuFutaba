@@ -1,10 +1,10 @@
 module.exports = (message, array, client, embed, port, back) => {
     const fs = require("fs");
     var _str = "", _str2 = "**200 OK**";
-    fs.stat(`./Source/User/${message.author.id}`, (err)=>{
+    fs.stat(`./User/${message.author.id}`, (err)=>{
         if(err) {
             // 최초 유저 설정
-            fs.mkdir(`./Source/User/${message.author.id}`, (err2)=>{
+            fs.mkdir(`./User/${message.author.id}`, (err2)=>{
                 if(err2) {
                     _str2 = "**500 ERROR**"
                     _str = "유저 프리셋 초기 설정에 문제가 발생했습니다\n해당 문제를 관리자에게 알려주세요\n\nGameBoy5141@gmail.com";
@@ -20,7 +20,7 @@ module.exports = (message, array, client, embed, port, back) => {
         
         
         else{
-            fs.readdir(`./Source/User/${message.author.id}`, (err3 , ev)=>{
+            fs.readdir(`./User/${message.author.id}`, (err3 , ev)=>{
                 if(err3) {
                     _str2 = "**500 ERROR**"
                     _str = "유저 프리셋 로드에 문제가 발생했습니다\n해당 문제를 관리자에게 알려주세요\n\nGameBoy5141@gmail.com";

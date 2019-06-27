@@ -3,11 +3,11 @@ module.exports = (message, array, client, embed, port, back) => {
     var _str = "", _str2 = "**200 OK**";
 
     try{
-        fs.stat(`./Source/User/${message.author.id}`, (err) => {
+        fs.stat(`./User/${message.author.id}`, (err) => {
             if (err)
                 message.channel.send(`${message.author} **500 ERROR**\n\`\`\`\n\프리셋 초기 설정이 완료되지 않았습니다\n--scripts 명령어로 설정을 완료하여주세요\n\`\`\``);
             else {
-                fs.readdir(`./Source/User/${message.author.id}`, (err3, ev) => {
+                fs.readdir(`./User/${message.author.id}`, (err3, ev) => {
                     if (err3) {
                         _str2 = "**500 ERROR**"
                         _str = "유저 프리셋 로드에 문제가 발생했습니다\n해당 문제를 관리자에게 알려주세요\n\nGameBoy5141@gmail.com";
@@ -30,7 +30,7 @@ module.exports = (message, array, client, embed, port, back) => {
                                 break;
 
                             case "set":
-                                fs.writeFile(`./Source/User/${message.author.id}/${array[2].split(":")[0]}`, message.content.split("```")[1].split("```")[0],  'utf8', (err) => {
+                                fs.writeFile(`./User/${message.author.id}/${array[2].split(":")[0]}`, message.content.split("```")[1].split("```")[0],  'utf8', (err) => {
                                     if (err) {
                                         _str2 = "**500 ERROR**"
                                         _str = err;
@@ -45,7 +45,7 @@ module.exports = (message, array, client, embed, port, back) => {
                                 break;
 
                             case "show":
-                                fs.readFile(`./Source/User/${message.author.id}/${ev[array[2]]}`, (err, data)=>{
+                                fs.readFile(`./User/${message.author.id}/${ev[array[2]]}`, (err, data)=>{
                                     _str = ev[array[2]] +"\n\n" + data;
                                     if (err) {
                                         _str2 = "**500 ERROR**"
@@ -57,7 +57,7 @@ module.exports = (message, array, client, embed, port, back) => {
                                 break;
 
                             case "rm":
-                                fs.unlink(`./Source/User/${message.author.id}/${ev[array[2]]}`, (err)=>{
+                                fs.unlink(`./User/${message.author.id}/${ev[array[2]]}`, (err)=>{
                                     if (err) {
                                         _str2 = "**500 ERROR**"
                                         _str = err;
@@ -75,7 +75,7 @@ module.exports = (message, array, client, embed, port, back) => {
                                     _str = "명령어를 잘못 입력하셨습니다"
                                     finish();
                                 } else {
-                                    fs.readFile(`./Source/User/${message.author.id}/${ev[array[1]]}`, (err, data) => {
+                                    fs.readFile(`./User/${message.author.id}/${ev[array[1]]}`, (err, data) => {
                                         data = data.toString().split("\n");
                                         running_schedule = { list: [], count: 0, index: -1, identity : array[1] };
                                         for (var i in data) {

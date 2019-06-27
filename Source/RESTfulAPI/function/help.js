@@ -2,7 +2,7 @@ module.exports = (body, moduleControl) => {
     const async = require('async');
     const fs = require('fs');
 
-    fs.readFile("./Source/File/help.txt", "utf-8", (err, data) => {
+    fs.readFile("./File/help.txt", "utf-8", (err, data) => {
         if (err)
             moduleControl.reject({ message: err.message, stack: err.stack });
         else {

@@ -55,9 +55,9 @@ Use **Docker** _EASY_ then before!
 ```
 **1.** pull       `[IMAGENAME]`  
 **2.** del        `[IMAGENAME]`  
-**3.** run       `[IMAGENAME]  `
+**3.** run       `[IMAGENAME]  `  
 **4.** stop     `[CONTAINERID]`  
-**5.** start     `[CONTAINERID]  `
+**5.** start     `[CONTAINERID]  `  
 **6.** restart `[CONTAINERID]`  
 **7.** rm        `[CONTAINERID]  `
 **8.** prune  

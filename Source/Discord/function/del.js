@@ -29,9 +29,11 @@ module.exports = (message, array, client, embed, port, back) => {
         // delete containers
         var lists = data.split("\n");
         for(var index in lists) {
-            var _array = ["ps", lists[index]];
             if (!(lists[index] == "")) {
-                (require(`./rm.js`))(message, _array, client, embed, port, ()=>{});
+                if(lists[index].indexOf(array[1])){
+                    var _array = ["ps", lists[index].split(array[1])[1]];
+                    (require(`./rm.js`))(message, _array, client, embed, port, ()=>{});
+                }
             }
         }
         back();

@@ -26,7 +26,7 @@ Use **Docker** _EASY_ then before!
    npm install async
    ```
 
-5. create token.txt in /  
+5. create token.txt on /  
 
    ```
    - Source/token.txt

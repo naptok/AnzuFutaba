@@ -1,4 +1,4 @@
-remote_theme : mmistakes/minimal-mistakes
+theme : mmistakes/minimal-mistakes
 
 title                    : "ANZU FUTABA"
 title_separator          : "-"

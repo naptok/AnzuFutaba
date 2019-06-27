@@ -1,37 +1,41 @@
-## Welcome to GitHub Pages
+<div align="center">
+<a href="https://github.com/des5141/AnzuFutaba">
+<img alt="Go To Wiki" src="./image/title.jpg" width="500" />
+</a>
+</div>
 
-You can use the [editor on GitHub](https://github.com/des5141/AnzuFutaba/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+# [Anzu Futaba](https://github.com/des5141/AnzuFutaba)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Use **Docker** _EASY_ then before!
 
-### Markdown
+## How to Install
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+## Feature
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/des5141/AnzuFutaba/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Version
+
+
+
+
+
+## Support Git History
+
+### Credits
+
+Based on these amazing projects:
+
+- Liberty🌠 by [Jeong Hyeon Kim](https://github.com/des5141)
+
+## License
+
+MIT

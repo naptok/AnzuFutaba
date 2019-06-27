@@ -4,6 +4,10 @@
 </a>
 </div>
 
+> this is sample image that is use **Anzu Futaba**   
+
+
+
 <div align="center">
 <a href="https://github.com/des5141/AnzuFutaba">
 <img alt="image1" src="./Image/title.jpg" width="600" />

@@ -1,5 +1,11 @@
 <div align="center">
 <a href="https://github.com/des5141/AnzuFutaba">
+<img alt="padding" src="./Image/padding.png" height="50" />
+</a>
+</div>
+
+<div align="center">
+<a href="https://github.com/des5141/AnzuFutaba">
 <img alt="image2" src="./Image/sample01.PNG" width="1200" />
 </a>
 </div>
@@ -8,7 +14,7 @@
 
 <div align="center">
 <a href="https://github.com/des5141/AnzuFutaba">
-<img alt="padding" src="./Image/padding.png" height="600" />
+<img alt="padding" src="./Image/padding.png" height="200" />
 </a>
 </div>
 

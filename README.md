@@ -1,6 +1,6 @@
 <div align="center">
 <a href="https://github.com/des5141/AnzuFutaba">
-<img alt="Go To Wiki" src="./image/title.jpg" width="500" />
+<img alt="Go To Wiki" src="./Image/title.jpg" width="500" />
 </a>
 </div>
 

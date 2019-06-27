@@ -16,7 +16,6 @@ module.exports = (message, array, client, embed, port, back) => {
     
     request.post(options, (err, res, body) => {
         if (body.success) {
-            message.channel.send(`${message.author} **200 OK**`);
             delete_containers(body.string, back);
             //send_string = `${message.author} **200 OK**\n\`\`\`\n${send_string}\n\`\`\``
         }else{
@@ -31,7 +30,7 @@ module.exports = (message, array, client, embed, port, back) => {
         for(var index in lists) {
             if (!(lists[index] == "")) {
                 if(lists[index].indexOf(array[1])){
-                    var _array = ["ps", lists[index].split(array[1])[1]];
+                    var _array = ["ps", lists[index].split(":")[1]];
                     (require(`./rm.js`))(message, _array, client, embed, port, ()=>{});
                 }
             }

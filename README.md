@@ -6,7 +6,10 @@
 
 > this is sample image that is use **Anzu Futaba**   
 
-<div style="margin:100px;"> 
+<div align="center">
+<a href="https://github.com/des5141/AnzuFutaba">
+<img alt="padding" src="./Image/padding.png" height="600" />
+</a>
 </div>
 
 <div align="center">

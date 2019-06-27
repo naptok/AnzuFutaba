@@ -1,4 +1,4 @@
-theme: jekyll-theme-minimal
+remote_theme : minimal-mistakes
 
 title                    : "ANZU FUTABA"
 title_separator          : "-"

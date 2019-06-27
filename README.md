@@ -1,12 +1,12 @@
 <div align="center">
 <a href="https://github.com/des5141/AnzuFutaba">
-<img alt="Go To Wiki" src="./Image/title.jpg" width="600" />
+<img alt="image1" src="./Image/title.jpg" width="600" />
 </a>
 </div>
 
 <div align="center">
 <a href="https://github.com/des5141/AnzuFutaba">
-<img alt="Go To Wiki" src="./Image/sample01.png" width="1200" />
+<img alt="image2" src="./Image/sample01.png" width="1200" />
 </a>
 </div>
 

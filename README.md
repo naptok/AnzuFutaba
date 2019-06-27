@@ -76,7 +76,7 @@ Use **Docker** _EASY_ then before!
 ```
 **1.** pull       `[IMAGENAME]`  
 **2.** del        `[IMAGENAME]`  
-**3.** run       `[IMAGENAME]  `  
+**3.** run       `[IMAGENAME]` ( _OPTION_ `[OUTPORT-INPORT]` `[OUTVOLUME-INVOLUME]` )  
 **4.** stop     `[CONTAINERID]`  
 **5.** start     `[CONTAINERID]  `  
 **6.** restart `[CONTAINERID]`  

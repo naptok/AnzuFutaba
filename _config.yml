@@ -1,6 +1,6 @@
-remote_theme : minimal-mistakes
+remote_theme : mmistakes/minimal-mistakes
 
 title                    : "ANZU FUTABA"
 title_separator          : "-"
 name                     : "Liberty"
-description              : "An amazing website."
+description              : "The easiest and fastest way to use \"Docker\""

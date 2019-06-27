@@ -94,7 +94,7 @@ Use **Docker** _EASY_ then before!
 ```
 
 **1.** about  
-`> interduce about Anzu Futaba`
+`> introduce about Anzu Futaba`
 
 **2.** clear  
 `delete 99 messages`

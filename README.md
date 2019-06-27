@@ -6,7 +6,7 @@
 
 <div align="center">
 <a href="https://github.com/des5141/AnzuFutaba">
-<img alt="image2" src="./Image/sample01.png" width="1200" />
+<img alt="image2" src="./Image/sample01.PNG" width="1200" />
 </a>
 </div>
 

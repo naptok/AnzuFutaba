@@ -124,7 +124,7 @@ module.exports = (message, array, client, embed, port, back) => {
                 } catch (e) {
                     _str2 = "**500 ERROR**"
                     _str = "명령어를 잘못 입력하셨습니다"
-                    finish();
+                    message.channel.send(`${message.author} ${_str2}\n\`\`\`\n${_str}\n\`\`\``);
                 }
             } else {
                 message.channel.send(data.list[data.index]);
@@ -132,7 +132,7 @@ module.exports = (message, array, client, embed, port, back) => {
             }
         }else if(data.index == data.count){
             _str = `프리셋 [${data.identity}]번 - [${identity_name}]의 실행을 끝마쳤습니다`
-            finish();
+            message.channel.send(`${message.author} ${_str2}\n\`\`\`\n${_str}\n\`\`\``);
         }
     }
 }

@@ -119,7 +119,7 @@ module.exports = (message, array, client, embed, port, back) => {
             if (!(_array[0].startsWith("#"))) {
                 try {
                     delete require.cache[require.resolve(`./${_array[0]}.js`)];
-                    (require(`./${_array[0]}.js`))(message, _array, client, embed, port, () => { setTimeout(() => { running(data); }, 1000); });
+                    (require(`./${_array[0]}.js`))(message, _array, client, embed, port, () => { setTimeout(() => { running(data); }, 700); });
 
                 } catch (e) {
                     _str2 = "**500 ERROR**"
@@ -128,10 +128,10 @@ module.exports = (message, array, client, embed, port, back) => {
                 }
             } else {
                 message.channel.send(data.list[data.index]);
-                setTimeout(() => { running(data); }, 1000);
+                setTimeout(() => { running(data); }, 700);
             }
         }else {
-            _str = `프리셋 [${data.identity}]번 - [${identity_name}]의 실행을 끝마쳤습니다`
+            _str = `프리셋 [${data.identity}]번 - [${data.identity_name}]의 실행을 끝마쳤습니다`
             message.channel.send(`${message.author} ${_str2}\n\`\`\`\n${_str}\n\`\`\``);
         }
     }

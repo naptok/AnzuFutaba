@@ -26,6 +26,7 @@ module.exports = (message, array, client, embed, port, back) => {
                     }
                 }
             }
+            console.log(running_cycle)
             
             delete_containers(running_cycle);
         }else{

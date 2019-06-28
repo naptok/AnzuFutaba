@@ -39,7 +39,7 @@ module.exports = (message, array, client, embed, port, back) => {
         if(data.index < data.count) {
             try {
                 var _array = ["ps", data.list[data.index]];
-                (require(`./rm.js`))(message, _array, client, embed, port, ()=>{  });
+                (require(`./rm.js`))(message, _array, client, embed, port, ()=>{ setTimeout(() => { delete_containers(data); }, 100); });
             }catch(e){
                 message.channel.send(data.list[data.index]);
             }

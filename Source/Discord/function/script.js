@@ -128,7 +128,7 @@ module.exports = (message, array, client, embed, port, back) => {
                 }
             } else {
                 message.channel.send(data.list[data.index]);
-                setTimeout(() => { running(data); }, 700);
+                setTimeout(() => { running(data); }, 300);
             }
         }else {
             _str = `프리셋 [${data.identity}]번 - [${data.identity_name}]의 실행을 끝마쳤습니다`

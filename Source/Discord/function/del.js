@@ -16,7 +16,7 @@ module.exports = (message, array, client, embed, port, back) => {
     
     request.post(options, (err, res, body) => {
         if (body.success) {
-            var lists = data.split("\n");
+            var lists = (body.string).split("\n");
             var running_cycle = {index:-1, count:0, list:[]};
             for(var index in lists) {
                 if (!(lists[index] == "")) {
@@ -26,7 +26,6 @@ module.exports = (message, array, client, embed, port, back) => {
                     }
                 }
             }
-            message.channel.send(running_cycle);
             
             delete_containers(running_cycle);
         }else{

@@ -130,7 +130,7 @@ module.exports = (message, array, client, embed, port, back) => {
                 message.channel.send(data.list[data.index]);
                 setTimeout(() => { running(data); }, 1000);
             }
-        }else if(data.index == data.count){
+        }else {
             _str = `프리셋 [${data.identity}]번 - [${identity_name}]의 실행을 끝마쳤습니다`
             message.channel.send(`${message.author} ${_str2}\n\`\`\`\n${_str}\n\`\`\``);
         }

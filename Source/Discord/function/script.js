@@ -77,7 +77,7 @@ module.exports = (message, array, client, embed, port, back) => {
                                 } else {
                                     fs.readFile(`./User/${message.author.id}/${ev[array[1]]}`, (err, data) => {
                                         data = data.toString().split("\n");
-                                        running_schedule = { list: [], count: 0, index: -1, identity : array[1] };
+                                        running_schedule = { list: [], count: 0, index: -1, identity : array[1], identity_name : ev[array[1]] };
                                         for (var i in data) {
                                             if (data[i] != "") {
                                                 var _array = data[i].split(' ');
@@ -131,7 +131,7 @@ module.exports = (message, array, client, embed, port, back) => {
                 setTimeout(() => { running(data); }, 100);
             }
         }else if(data.index == data.count){
-            _str = `프리셋 [${data.identity}]번의 실행을 끝마쳤습니다`
+            _str = `프리셋 [${data.identity}]번 - [${identity_name}]의 실행을 끝마쳤습니다`
             finish();
         }
     }

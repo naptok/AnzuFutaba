@@ -42,6 +42,7 @@ module.exports = (port) => {
             exec(`https://github.com${pathname}`, (err, stdout, stderr) => {
                 if (err) {
                     data.success = false;
+                    data.reason = stderr;
                 } else {
                     
                 }

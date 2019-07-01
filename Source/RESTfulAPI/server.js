@@ -55,10 +55,25 @@ module.exports = (port) => {
                                 console.log(err);
                             } else {
                                 exec(`docker build -t ${tagname} .`, { cwd: `./Git/${repo}` }, (err, stdout, stderr) => {
-                                    if(err)
-                                        console.log(err)
-                                    res.writeHead(200, { "Content-Type": "application/json" });
-                                    return res.end(JSON.stringify(data));
+                                    if (err) {
+                                        console.log(err);
+                                        res.writeHead(200, { "Content-Type": "application/json" });
+                                        return res.end(JSON.stringify(data));
+                                    }
+                                    else {
+                                        fs.readFile(`./Git/${repo}/Anzufile`, (err, anzufile)=>{
+                                            if(err) {
+                                                console.log(err);
+                                            }
+
+                                            else {
+                                                anzufile = anzufile.split("\n");
+                                                console.log(anzufile);
+                                            }
+                                            res.writeHead(200, { "Content-Type": "application/json" });
+                                            return res.end(JSON.stringify(data));
+                                        });
+                                    }
                                 });
                             }
                         });
@@ -74,8 +89,11 @@ module.exports = (port) => {
                                 console.log(err);
                             } else {
                                 exec(`docker build -t ${tagname} .`, { cwd: `./Git/${pathname.split(":")[0]}` }, (err, stdout, stderr) => {
-                                    if(err)
+                                    if (err)
                                         console.log(err)
+                                    else {
+
+                                    }
                                     res.writeHead(200, { "Content-Type": "application/json" });
                                     return res.end(JSON.stringify(data));
                                 });

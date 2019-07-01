@@ -67,9 +67,9 @@ module.exports = (port) => {
                                             }
 
                                             else {
-                                                console.log(anzufile);
                                                 anzufile = anzufile.toString().split("\n");
-                                                console.log(anzufile);
+                                                running_schedule = { list: [], count: 0, index: -1 };
+
                                             }
                                             res.writeHead(200, { "Content-Type": "application/json" });
                                             return res.end(JSON.stringify(data));

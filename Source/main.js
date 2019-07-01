@@ -9,4 +9,4 @@ const port = 5000;
 (require("./RESTfulAPI/server.js"))(port);
 
 // Start Discord server
-//(require("./Discord/server.js"))(JSON.parse(token).string, port, "--"); 
+(require("./Discord/server.js"))(JSON.parse(token).string, port, "--"); 

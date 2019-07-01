@@ -29,7 +29,6 @@ module.exports = (port) => {
                     res.writeHead(200, { "Content-Type": "application/json" });
                     return res.end(JSON.stringify(res_json));
                 }, (error) => {
-                    console.log(error);
                     res_json.success = false;
                     res_json.reason = error;
                     res.writeHead(500, { "Content-Type": "application/json" });
@@ -44,7 +43,6 @@ module.exports = (port) => {
                 let data = { success: true };
                 let repo = pathname.split("/")[2].split(":")[0];
                 let tagname = pathname.split(":")[1];
-                console.log(pathname.split(":")[0]);
 
                 fs.stat(`./Git/${repo}`, (err) => {
                     if (!err) {
@@ -52,21 +50,10 @@ module.exports = (port) => {
                             if (err) {
                                 data.success = false;
                                 data.reason = err;
-                                console.log(err);
                             } else {
                                 exec(`docker build -t ${tagname} .`, { cwd: `./Git/${repo}` }, (err, stdout, stderr) => {
-                                    if (err) {
-                                        console.log(err);
-                                    }
-                                    else {
-                                        fs.readFile(`./Git/${repo}/Anzufile`, (err, anzufile) => {
-                                            if (err) {
-                                                console.log(err);
-                                            }
-                                            res.writeHead(200, { "Content-Type": "application/json" });
-                                            return res.end(JSON.stringify(data));
-                                        });
-                                    }
+                                    res.writeHead(200, { "Content-Type": "application/json" });
+                                    return res.end(JSON.stringify(data));
                                 });
                             }
                         });
@@ -79,11 +66,10 @@ module.exports = (port) => {
                             if (err) {
                                 data.success = false;
                                 data.reason = err;
-                                console.log(err);
+                                res.writeHead(200, { "Content-Type": "application/json" });
+                                return res.end(JSON.stringify(data));
                             } else {
                                 exec(`docker build -t ${tagname} .`, { cwd: `./Git/${pathname.split(":")[0]}` }, (err, stdout, stderr) => {
-                                    if (err)
-                                        console.log(err)
                                     res.writeHead(200, { "Content-Type": "application/json" });
                                     return res.end(JSON.stringify(data));
                                 });

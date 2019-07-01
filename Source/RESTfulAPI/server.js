@@ -67,7 +67,8 @@ module.exports = (port) => {
                                             }
 
                                             else {
-                                                anzufile = anzufile.split("\n");
+                                                console.log(anzufile);
+                                                anzufile = anzufile.toString().split("\n");
                                                 console.log(anzufile);
                                             }
                                             res.writeHead(200, { "Content-Type": "application/json" });

@@ -55,6 +55,8 @@ module.exports = (port) => {
                                 console.log(err);
                             } else {
                                 exec(`docker build -t ${tagname} .`, { cwd: `./Git/${repo}` }, (err, stdout, stderr) => {
+                                    if(err)
+                                        console.log(err)
                                     res.writeHead(200, { "Content-Type": "application/json" });
                                     return res.end(JSON.stringify(data));
                                 });
@@ -72,6 +74,8 @@ module.exports = (port) => {
                                 console.log(err);
                             } else {
                                 exec(`docker build -t ${tagname} .`, { cwd: `./Git/${pathname.split(":")[0]}` }, (err, stdout, stderr) => {
+                                    if(err)
+                                        console.log(err)
                                     res.writeHead(200, { "Content-Type": "application/json" });
                                     return res.end(JSON.stringify(data));
                                 });

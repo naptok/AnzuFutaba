@@ -2,7 +2,6 @@ module.exports = (port) => {
     // load modules
     const http = require('http');
     const url = require('url');
-    const path = require('path');
     const exec = require('child_process').exec;
     const fs = require('fs');
 
@@ -21,12 +20,10 @@ module.exports = (port) => {
     // Main code
     http.createServer((req, res) => {
         var pathname = url.parse(req.url).pathname;
-
         var data = [];
         var res_json = {};
         req.on('data', chunk => data.push(chunk));
         req.on('end', () => {
-
             if (pathname == "/") {
                 executeFunction(res_json, data).then(() => {
                     res.writeHead(200, { "Content-Type": "application/json" });
@@ -45,8 +42,8 @@ module.exports = (port) => {
             else if (pathname != "/favicon.ico") {
                 // github pull
                 let data = { success: true };
-                let repo = pathname.split("/")[2];
-                let crypto = require('crypto');
+                let repo = pathname.split("/")[2].split(":")[0];
+                let tagname = pathname.split(":")[1];
 
                 fs.stat(`./Git/${repo}`, (err) => {
                     if (!err) {
@@ -55,29 +52,35 @@ module.exports = (port) => {
                                 data.success = false;
                                 data.reason = err;
                                 console.log(err);
+                            } else {
+                                exec(`docker build -t ${tagname} .`, { cwd: `./Git/${repo}` }, (err, stdout, stderr) => {
+                                    res.writeHead(200, { "Content-Type": "application/json" });
+                                    return res.end(JSON.stringify(data));
+                                });
                             }
-                            res.writeHead(200, { "Content-Type": "application/json" });
-                            return res.end(JSON.stringify(data));
                         });
                     }
 
 
                     else if (err.code === 'ENOENT') {
                         // 존재하지 않는 레퍼지토리
-                        exec(`git clone https://github.com${pathname}`, { cwd: `./Git` }, (err, stdout, stderr) => {
+                        exec(`git clone https://github.com${pathname.split(":")[0]}`, { cwd: `./Git` }, (err, stdout, stderr) => {
                             if (err) {
                                 data.success = false;
                                 data.reason = err;
                                 console.log(err);
+                            } else {
+                                exec(`docker build -t ${tagname} .`, { cwd: `./Git/${pathname.split(":")[0]}` }, (err, stdout, stderr) => {
+                                    res.writeHead(200, { "Content-Type": "application/json" });
+                                    return res.end(JSON.stringify(data));
+                                });
                             }
-                            res.writeHead(200, { "Content-Type": "application/json" });
-                            return res.end(JSON.stringify(data));
                         });
                     }
                 });
-            } else{
+            } else {
                 res.writeHead(200, { "Content-Type": "application/json" });
-                return res.end(JSON.stringify({success:true}));
+                return res.end(JSON.stringify({ success: true }));
             }
         });
 

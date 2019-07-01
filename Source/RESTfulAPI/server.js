@@ -44,8 +44,8 @@ module.exports = (port) => {
                 let data = { success: true };
                 let repo = pathname.split("/")[2].split(":")[0];
                 let tagname = pathname.split(":")[1];
-                console.log(pathname);
-                
+                console.log(pathname.split(":")[0]);
+
                 fs.stat(`./Git/${repo}`, (err) => {
                     if (!err) {
                         exec(`git pull`, { cwd: `./Git/${repo}` }, (err, stdout, stderr) => {

@@ -39,7 +39,8 @@ module.exports = (port) => {
         } else {
             // github pull
             let data = { success: true };
-            exec(`git clone https://github.com${pathname}`, (err, stdout, stderr) => {
+            var parentDir = path.resolve(process.cwd(), '..');
+            exec(`git clone https://github.com${pathname}`, {cwd:`${parentDir}/Git`}, (err, stdout, stderr) => {
                 if (err) {
                     data.success = false;
                     data.reason = stderr;

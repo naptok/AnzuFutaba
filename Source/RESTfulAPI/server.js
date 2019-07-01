@@ -2,7 +2,9 @@ module.exports = (port) => {
     // load modules
     const http = require('http');
     const url = require('url');
+    const path = require('path');
     const exec = require('child_process').exec;
+    const fs = require('fs');
 
     // Execute function
     function executeFunction(json_temp, data) {
@@ -36,19 +38,37 @@ module.exports = (port) => {
                     return res.end(JSON.stringify(res_json));
                 });
             });
-        } else {
+        } else if(pathname != "/favicon.ico") {
             // github pull
             let data = { success: true };
-            var parentDir = path.resolve(process.cwd(), '..');
-            exec(`git clone https://github.com${pathname}`, {cwd:`${parentDir}/Git`}, (err, stdout, stderr) => {
-                if (err) {
-                    data.success = false;
-                    data.reason = stderr;
-                } else {
-                    
+            let repo = pathname.split("/")[2];
+
+            fs.stat(`./Git/${repo}`, (err)=>{
+                if(!err){
+                    exec(`git pull`, {cwd:`./Git/${repo}`}, (err, stdout, stderr) => {
+                        if (err) {
+                            data.success = false;
+                            data.reason = err;
+                            console.log(err);
+                        }
+                        res.writeHead(400, { "Content-Type": "application/json" });
+                        return res.end(JSON.stringify(data));
+                    });
                 }
-                res.writeHead(400, { "Content-Type": "application/json" });
-                return res.end(JSON.stringify(data));
+                
+                
+                else if (err.code === 'ENOENT'){
+                    // 존재하지 않는 레퍼지토리
+                    exec(`git clone https://github.com${pathname}`, {cwd:`./Git`}, (err, stdout, stderr) => {
+                        if (err) {
+                            data.success = false;
+                            data.reason = err;
+                            console.log(err);
+                        }
+                        res.writeHead(400, { "Content-Type": "application/json" });
+                        return res.end(JSON.stringify(data));
+                    });
+                }
             });
         }
     }).listen(port);

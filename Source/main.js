@@ -2,7 +2,8 @@
 const fs = require('fs');
 
 // Set variables
-//const token = fs.readFileSync('token.txt', 'UTF8');
+
+const token = fs.readFileSync('token.txt', 'UTF8');
 const port = 5000;
 
 // Start RESTful API server

@@ -51,7 +51,7 @@ module.exports = (port) => {
                             data.reason = err;
                             console.log(err);
                         }
-                        res.writeHead(400, { "Content-Type": "application/json" });
+                        res.writeHead(200, { "Content-Type": "application/json" });
                         return res.end(JSON.stringify(data));
                     });
                 }
@@ -65,7 +65,7 @@ module.exports = (port) => {
                             data.reason = err;
                             console.log(err);
                         }
-                        res.writeHead(400, { "Content-Type": "application/json" });
+                        res.writeHead(200, { "Content-Type": "application/json" });
                         return res.end(JSON.stringify(data));
                     });
                 }

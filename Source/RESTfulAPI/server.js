@@ -57,19 +57,11 @@ module.exports = (port) => {
                                 exec(`docker build -t ${tagname} .`, { cwd: `./Git/${repo}` }, (err, stdout, stderr) => {
                                     if (err) {
                                         console.log(err);
-                                        res.writeHead(200, { "Content-Type": "application/json" });
-                                        return res.end(JSON.stringify(data));
                                     }
                                     else {
-                                        fs.readFile(`./Git/${repo}/Anzufile`, (err, anzufile)=>{
-                                            if(err) {
+                                        fs.readFile(`./Git/${repo}/Anzufile`, (err, anzufile) => {
+                                            if (err) {
                                                 console.log(err);
-                                            }
-
-                                            else {
-                                                anzufile = anzufile.toString().split("\n");
-                                                running_schedule = { list: [], count: 0, index: -1 };
-
                                             }
                                             res.writeHead(200, { "Content-Type": "application/json" });
                                             return res.end(JSON.stringify(data));
@@ -92,9 +84,6 @@ module.exports = (port) => {
                                 exec(`docker build -t ${tagname} .`, { cwd: `./Git/${pathname.split(":")[0]}` }, (err, stdout, stderr) => {
                                     if (err)
                                         console.log(err)
-                                    else {
-
-                                    }
                                     res.writeHead(200, { "Content-Type": "application/json" });
                                     return res.end(JSON.stringify(data));
                                 });

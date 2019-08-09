@@ -24,8 +24,7 @@
 </a>
 </div>
 
-
-# [Anzu Futaba](https://github.com/des5141/AnzuFutaba)
+# [Anzu Futaba](https://github.com/liber31/AnzuFutaba)
 
 Use **Docker** _EASY_ then before!
 
@@ -120,7 +119,7 @@ Use **Docker** _EASY_ then before!
 
 Based on these amazing projects:
 
-- Liberty🌠 by [Jeong Hyeon Kim](https://github.com/des5141)
+- Liberty🌠 by [Jeong Hyeon Kim](https://github.com/liber31)
 
 ## License
 

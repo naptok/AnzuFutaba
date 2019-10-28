@@ -1,0 +1,1 @@
+npm i ini && npm i discord.js

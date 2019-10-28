@@ -49,7 +49,7 @@
 
 ## Feature
 
-**Commands: ** 
+**Commands:**   
   `img`, `image`, `images`   도커 이미지 목록을 보여줍니다  
   `rmi`   도커 이미지를 지웁니다  
   `pull`   도커 이미지를 받습니다  

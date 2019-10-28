@@ -1,38 +1,13 @@
-<div align="center">
-<a href="https://github.com/des5141/AnzuFutaba">
-<img alt="padding" src="./Image/padding.png" height="50" />
-</a>
-</div>
+# [AnzuFutaba](https://github.com/liber31/AnzuFutaba)
 
-<div align="center">
-<a href="https://github.com/des5141/AnzuFutaba">
-<img alt="image2" src="./Image/sample01.PNG" width="1200" />
-</a>
-</div>
+**AnzuFutaba** is a tool that helps you make using a docker easier, more convenient, and faster, anytime, anywhere. All you have to do is install it on the server where the docker is installed.
 
-> this is sample image that is use **Anzu Futaba**   
+* **Developer blog** : http://blog.naver.com/rhea31
+* **License** : https://github.com/liber31/AnzuFutaba/blob/master/LICENSE
 
-<div align="center">
-<a href="https://github.com/des5141/AnzuFutaba">
-<img alt="padding" src="./Image/padding.png" height="200" />
-</a>
-</div>
+------
 
-<div align="center">
-<a href="https://github.com/des5141/AnzuFutaba">
-<img alt="image1" src="./Image/title.jpg" width="600" />
-</a>
-</div>
-
-# [Anzu Futaba](https://github.com/liber31/AnzuFutaba)
-
-Use **Docker** _EASY_ then before!
-
-
-
-[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
-
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+![](./image/sample00.png)
 
 ## How to Install
 
@@ -40,78 +15,66 @@ Use **Docker** _EASY_ then before!
 
 2. download and install node12 from [here](https://nodejs.org/en/)
 
-3. download and unzip [Source](https://github.com/des5141/AnzuFutaba/archive/master.zip) folder
+3. download and unzip [Source](https://github.com/des5141/AnzuFutaba/archive/master.zip)
 
-4. install modules  
+4. install modules
 
-   ```
-   npm install discord.js
-   npm install request
-   npm install async
-   ```
-
-5. create token.txt on /  
-
-   ```
-   - Source/token.txt
+   ```sh
+   # on mac or linux
+   ./install.sh
    
-   { "string" : "[YOUR DISCORD BOT TOKEN]" }
+   # on windows
+   ./install.bat
    ```
 
-6. **run**  
+5. modify the **SETUP.ini**
 
+   ```sh
+   [discord]
+   token = [YOUR BOT TOKEN]
+   text = [YOUR BOT INSTRUCTION]
+   type = [YOUR BOT TYPE]
+   startLetter = [YOUR BOT COMMAND START LETTER]
    ```
-   node main.js
+
+6. **run**
+
+   ```sh
+   node program.js
    ```
-
-   > forever start main.js (the service will never die)
-
-
 
 ## Feature
 
-```js
-`Standard Command Lists`
-```
+**Commands:**
+  `img`, `image`, `images`   도커 이미지 목록을 보여줍니다
+  `rmi`   도커 이미지를 지웁니다
+  `pull`   도커 이미지를 받습니다
+  `prune`   불필요한 도커 이미지들을 지웁니다
+  `run`   컨테이너를 실행합니다
+  `ps`    컨테이너 목록을 보여줍니다
+  `stop`   컨테이너를 중지합니다
+  `restart`   컨테이너를 재시작합니다
+  `rm`   컨테이너를 지웁니다
+  `del`   이미지에 해당하는 모든 컨테이너를 지웁니다
+  `clean`   모든 컨테이너를 지웁니다
+  `script`, `sc`   스크립트를 만들거나, 보거나, 지우거나, 사용합니다
+  `scripts`, `scs`   스크립트 목록을 보여줍니다
+  `docker`   도커 명령어를 실행합니다
 
-```js
-`Docker Command List`
-```
-**1.** pull `[IMAGENAME] `     
-**2.** destroy `[IMAGENAME] `    
-**3.** del `[IMAGENAME]`   
-**4.** run `[IMAGENAME]`  
-**5.** stop `[CONTAINERID]`  
-**6.** start `[CONTAINERID]`  
-**7.** restart `[CONTAINERID]`  
-**8.** rm `[CONTAINERID]`  
-**9.** prune  
-**10.** ps  
-**11.** list  
-**12.** script `or` sc   
+**Options:**
+  `rmi`   [IMAGEID]
+  `pull`   [IMAGEID]
+  `run`   [IMAGEID] [CONTAINER NAME] <= [OPTIONS (docker run --help)]
+  `stop`   [CONTAINERID]
+  `restart`   [CONTAINERID]
+  `rm`   [CONTAINERID]
+  `del`   [IMAGEID]
+  `script`   [OPTIONS (list, set [NAME]: [CODES], rm [INDEX], show [INDEX])]
+  `docker`   <= [OPTIONS (docker --help)] 
 
-> ALSO CAN => `script set a:'''[code]'''`, `script list`, `scripts`, `script [NUMBER]`, `script rm [NUMBER]`, `script show [NUMBER]`
+## Branch
 
-
-```js
-`Additional Command List`
-```
-
-**1.** about  
-`> introduce about Anzu Futaba`
-
-**2.** clear  
-`delete 99 messages`
-
-
-
-
-
-## Version
-
-* 2019 06/27 - **ADDED** Basic operators
-
-
+* master - new updated version
 
 ## Support Git History
 
@@ -119,8 +82,12 @@ Use **Docker** _EASY_ then before!
 
 Based on these amazing projects:
 
-- Liberty🌠 by [Jeong Hyeon Kim](https://github.com/liber31)
+- liber31 by [Jeong Hyeon Kim](https://github.com/liber31)
 
 ## License
 
 MIT
+
+---
+
+Copyright 2019. by [liber31](https://github.com/liber31) all rights reserved.
